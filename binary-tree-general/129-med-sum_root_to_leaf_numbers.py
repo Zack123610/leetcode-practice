@@ -27,6 +27,9 @@ class Solution:
         
         return dfs(root, 0)
     
+    # Time Complexity: O(n) where n is the number of nodes
+    # Space Complexity: O(n) where h is the height of the tree (due to recursion stack)
+    
     def sumNumbersBFS(self, root: Optional[TreeNode]) -> int:
         # BFS Solution
         if not root:
@@ -49,4 +52,7 @@ class Solution:
                 queue.append((node.right, current_sum))
                 
         return total_sum
+    
+    # Time Complexity: O(n) where n is the number of nodes
+    # Space Complexity: O(n) where n is the number of nodes (due to queue), O(n) in the worst case (when the tree is a complete binary tree)
 
