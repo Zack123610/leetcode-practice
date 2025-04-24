@@ -5,12 +5,16 @@
 ### Merge Sort
 
 Here's how the algorithm works:
-1. **Base Case**: If the list is empty or has only one node, return it as is.
+1. **Base Case**: 
+If the list is empty or has only one node, return it as is.
+
 2. **Divide**:
 - Use the "slow and fast pointer" technique to find the middle of the list
 - Split the list into two halves at the middle point
+
 3. **Conquer**:
 Recursively sort both halves of the list
+
 4. **Combine**:
 - Merge the sorted halves using the `merge` method
 - Sorting logic happens here inside the `merge` method
@@ -21,6 +25,26 @@ Recursively sort both halves of the list
 
 Relevant Leetcode Questions:
 - Leetcode 148: Sort List
+
+### Binary Tree
+1. **Recursive DFS Solution (`maxDepth`)**:
+- This is the most straightforward and elegant solution
+- Time Complexity: O(n) where n is the number of nodes
+- Space Complexity: O(h) where h is the height of the tree (due to recursion stack)
+- The solution recursively finds the maximum depth between the left and right subtrees and adds 1 for the current node
+
+2. **Iterative BFS Solution (`maxDepthBFS`)**:
+- Uses a queue to perform level-order traversal
+- Time Complexity: O(n)
+- Space Complexity: O(n) in the worst case (when the tree is completely unbalanced)
+- Counts the number of levels in the tree
+
+3. **Iterative DFS Solution (`maxDepthDFS`)**:
+- Uses a stack to perform depth-first traversal
+- Time Complexity: O(n)
+- Space Complexity: O(h) where h is the height of the tree
+- Keeps track of the maximum depth encountered during traversal
+
 
 ### 1-Dimension Dynamic Programming
 1. The problem asks for the number of distinct ways to climb n stairs when you can take either 1 or 2 steps at a time.
