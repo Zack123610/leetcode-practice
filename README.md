@@ -45,6 +45,9 @@ Relevant Leetcode Questions:
 - Space Complexity: O(h) where h is the height of the tree
 - Keeps track of the maximum depth encountered during traversal
 
+### Graph
+- Course Schedule I and II: BFS - Kahn's Algorithm
+    **YouTube material:** [Course Schedule BFS/DFS Explanation](https://www.youtube.com/watch?v=cIBFEhD77b4)
 
 ### 1-Dimension Dynamic Programming
 1. The problem asks for the number of distinct ways to climb n stairs when you can take either 1 or 2 steps at a time.
