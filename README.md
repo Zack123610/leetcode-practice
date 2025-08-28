@@ -88,6 +88,8 @@ Relevant Leetcode Questions:
 
 ### Backtracking Template
 
+Resource Link: [Backtracking Template](https://leetcode.com/explore/learn/card/recursion-ii/472/backtracking/2793/)
+
 ```python
 def backtrack(candidate):
     if find_solution(candidate):
