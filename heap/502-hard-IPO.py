@@ -5,6 +5,10 @@ from typing import List
 import heapq
 
 class Solution:
+    '''
+    Time Complexity: O(n log n)
+    Space Complexity: O(n)
+    '''
     def findMaximizedCapital(self, k: int, w: int, profits: List[int], capital: List[int]) -> int:
         # Min-heap by required capital
         min_cap = [(c, p) for c, p in zip(capital, profits)]
