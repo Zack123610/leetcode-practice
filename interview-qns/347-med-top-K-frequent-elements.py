@@ -2,6 +2,7 @@
 # Link: https://leetcode.com/problems/top-k-frequent-elements/
 
 from collections import Counter
+import heapq
 from typing import List
 
 class Solution:
@@ -31,3 +32,19 @@ class Solution:
                         return res
         
         return res
+
+class Solution2:
+    '''
+    Using Heap
+    Time Complexity: O(n log k)
+    Space Complexity: O(n)
+    '''
+    
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+
+        counter = {}
+
+        for num in nums:
+            counter[num] = 1 + counter.get(num, 0)
+        
+        return heapq.nlargest(k, counter.keys(), key=counter.get)
