@@ -3,6 +3,24 @@
 
 from typing import List
 
+class Solution1:
+    '''
+    Time Complexity: O(log n)
+    Space Complexity: O(1)
+    '''
+    def findMin(self, nums: List[int]) -> int:
+        left, right = 0, len(nums)-1
+
+        while left < right:
+            mid = (left + right) // 2
+
+            if nums[mid] > nums[right]:
+                left = mid+1
+            else:
+                right = mid
+            
+        return nums[left]
+
 class Solution:
     '''
     Approach 1: Binary Search - My Solution
