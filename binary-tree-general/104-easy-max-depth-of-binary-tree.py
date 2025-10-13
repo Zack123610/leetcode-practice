@@ -13,12 +13,20 @@ class TreeNode:
 
 class Solution:
     # Recursive DFS solution
+    '''
+    Time complexity: O(n)
+    Space complexity: O(logN) Recursion occurs N times. N - height of the tree.
+    '''
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
     
     # Iterative BFS solution
+    '''
+    Time complexity: O(n)
+    Space complexity: O(logN) Recursion occurs N times. N - height of the tree.
+    '''
     def maxDepthBFS(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
