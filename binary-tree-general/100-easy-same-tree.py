@@ -10,6 +10,10 @@ class TreeNode:
 
 class Solution:
     # Recursive solution
+    '''
+    Time complexity: O(n)
+    Space complexity: O(n) n - number of nodes
+    '''
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         # If both nodes are None, they are the same
         if not p and not q:
