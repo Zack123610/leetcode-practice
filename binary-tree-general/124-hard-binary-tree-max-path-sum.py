@@ -11,21 +11,29 @@ class TreeNode:
         
 class Solution:
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        # Post Order DFS
         maxPath = -float("inf")
 
-        def gainFromSubtree(node):
+        # post order traversal of subtree rooted at `node`
+        def gainFromSubtree(node: Optional[TreeNode]) -> int:
             nonlocal maxPath
 
             if not node:
                 return 0
 
-            left = max(gainFromSubtree(node.left), 0)
-            right = max(gainFromSubtree(node.right), 0)
+            # add the gain from the left subtree. Note that if the
+            # gain is negative, we can ignore it, or count it as 0.
+            # This is the reason we use `max` here.
+            gainFromLeft = max(gainFromSubtree(node.left), 0)
 
-            maxPath = max(maxPath, left + right + node.val)
+            # add the gain / path sum from right subtree. 0 if negative
+            gainFromRight = max(gainFromSubtree(node.right), 0)
 
-            return max(left + node.val, right + node.val)
-        
+            # if left or right gain are negative, they are counted
+            # as 0, so this statement takes care of all four scenarios
+            maxPath = max(maxPath, gainFromLeft + gainFromRight + node.val)
+
+            # return the max sum for a path starting at the root of subtree
+            return max(gainFromLeft + node.val, gainFromRight + node.val)
+
         gainFromSubtree(root)
         return maxPath
