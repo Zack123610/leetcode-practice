@@ -12,6 +12,10 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    '''
+    Time complexity: O(n)
+    Space complexity: O(n)
+    '''
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
@@ -35,3 +39,28 @@ class Solution:
             result.append(current_level)
         
         return result
+
+class SolutionRecursive:
+    '''
+    Time complexity: O(n)
+    Space complexity: O(n)
+    '''
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+
+        res = []
+
+        def dfs(node, depth):
+            if not node:
+                return
+            if len(res) == depth:
+                res.append([])
+            
+            res[depth].append(node.val)
+            dfs(node.left, depth + 1)
+            dfs(node.right, depth + 1)
+
+
+        dfs(root, 0)
+        return res
