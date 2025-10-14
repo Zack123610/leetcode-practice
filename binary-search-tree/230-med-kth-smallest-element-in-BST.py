@@ -9,6 +9,10 @@ class TreeNode:
         self.right = right
 
 class Solution:
+    '''
+    Time complexity: O(n)
+    Space complexity: O(n)
+    '''
     def kthSmallest(self, root: TreeNode, k: int) -> int:
         # Solution 1: Iterative approach using stack
         stack = []
