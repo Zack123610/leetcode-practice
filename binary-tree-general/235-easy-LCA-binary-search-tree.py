@@ -9,6 +9,10 @@ class TreeNode:
         self.right = None
 
 class Solution:
+    '''
+    Time complexity: O(h) where h is the height of the tree
+    Space complexity: O(1)
+    '''
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         cur = root
 
@@ -19,3 +23,19 @@ class Solution:
                 cur = cur.left
             else:
                 return cur
+
+class SolutionRecursive:
+    '''
+    Time complexity: O(h) where h is the height of the tree
+    Space complexity: O(h) where h is the height of the tree
+    '''
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        if not root:
+            return None
+        
+        if p.val > root.val and q.val > root.val:
+            return self.lowestCommonAncestor(root.right, p, q)
+        elif p.val < root.val and q.val < root.val:
+            return self.lowestCommonAncestor(root.left, p, q)
+        else:
+            return root
