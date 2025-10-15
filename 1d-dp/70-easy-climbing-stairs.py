@@ -2,6 +2,11 @@
 # Link: https://leetcode.com/problems/climbing-stairs/
 
 class Solution:
+    '''
+    DP + Bottom-Up
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+    '''
     def climbStairs(self, n: int) -> int:
         # Base cases
         if n <= 2:
