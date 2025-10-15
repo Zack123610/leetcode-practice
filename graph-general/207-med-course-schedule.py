@@ -5,6 +5,11 @@
 from collections import deque, defaultdict
 
 class SolutionBFS:
+    '''
+    BFS + Topological Sort
+    Time Complexity: O(V + E)
+    Space Complexity: O(V + E)
+    '''
     def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
         graph = defaultdict(list)
         in_degree = [0] * numCourses
@@ -27,6 +32,11 @@ class SolutionBFS:
 
 # --- DFS Solution (Cycle Detection) ---
 class SolutionDFS:
+    '''
+    DFS + Cycle Detection
+    Time Complexity: O(V + E)
+    Space Complexity: O(V + E)
+    '''
     def canFinish(self, numCourses: int, prerequisites: list[list[int]]) -> bool:
         graph = [[] for _ in range(numCourses)]
         for dest, src in prerequisites:
