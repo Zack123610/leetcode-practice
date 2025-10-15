@@ -8,6 +8,10 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 
 class Solution:
+    '''
+    Time Complexity: O(V + E)
+    Space Complexity: O(V)
+    '''
     def cloneGraph(self, node: 'Node') -> 'Node':
         # Handle empty graph case
         if not node:
