@@ -33,7 +33,7 @@ class Solution:
             nxt = cur.next
             cur.next = prev
             prev = cur
-            cur = nxt
+            cur = nxty
         
         # Merge two sorted linked list
         first, second = head, prev
